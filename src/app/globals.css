@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-volcan-black text-volcan-white antialiased;
+  }
+  
+  ::selection {
+    @apply bg-volcan-red text-volcan-white;
+  }
+}
+
+@layer components {
+  .volcan-gradient-text {
+    @apply bg-gradient-to-r from-volcan-red via-volcan-redDark to-volcan-red bg-clip-text text-transparent;
+  }
+  
+  .volcan-glow {
+    box-shadow: 0 0 20px rgba(214, 17, 17, 0.4), 0 0 40px rgba(214, 17, 17, 0.2);
+  }
+  
+  .volcan-glow-hover:hover {
+    box-shadow: 0 0 30px rgba(214, 17, 17, 0.6), 0 0 60px rgba(214, 17, 17, 0.3);
+  }
+  
+  .volcan-border-glow {
+    border: 1px solid rgba(214, 17, 17, 0.3);
+    box-shadow: inset 0 0 20px rgba(214, 17, 17, 0.1);
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-volcan-black/80;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-20;
+  }
+  
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bebas tracking-wider uppercase;
+  }
+  
+  .heading-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bebas tracking-wider uppercase;
+  }
+  
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-montserrat font-bold;
+  }
+  
+  .text-body {
+    @apply text-sm sm:text-base font-poppins text-gray-300 leading-relaxed;
+  }
+  
+  .btn-primary {
+    @apply bg-volcan-red hover:bg-volcan-redDark text-white font-montserrat font-semibold 
+           px-6 py-3 rounded-none transition-all duration-300 volcan-glow-hover
+           transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-volcan-red text-volcan-red hover:bg-volcan-red hover:text-white 
+           font-montserrat font-semibold px-6 py-3 rounded-none transition-all duration-300
+           transform hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D61111;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A80D0D;
+}
