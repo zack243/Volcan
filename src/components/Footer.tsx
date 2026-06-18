@@ -36,8 +36,8 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <a href="#home" className="flex items-center gap-3 mb-4">
-              <div className="relative w-8 h-8">
+            <a href="#home" className="flex items-center mb-4">
+              <div className="relative w-10 h-10">
                 <Image
                   src="/images/Volcan.png"
                   alt="VOLCAN"
@@ -46,7 +46,6 @@ export default function Footer() {
                   priority
                 />
               </div>
-              <span className="font-bebas text-2xl tracking-widest text-white">VOLCAN</span>
             </a>
             <p className="font-montserrat text-gray-400 text-sm">{t('footer.slogan') as string}</p>
           </motion.div>

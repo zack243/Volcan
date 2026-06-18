@@ -48,8 +48,8 @@ export default function Navbar() {
         <div className="w-full section-padding">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10">
+            <a href="#home" className="flex items-center group">
+              <div className="relative w-12 h-12">
                 <Image
                   src="/images/Volcan.png"
                   alt="VOLCAN"
@@ -58,9 +58,6 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <span className="font-bebas text-2xl tracking-widest text-white">
-                VOLCAN
-              </span>
             </a>
 
             {/* Desktop Navigation */}
