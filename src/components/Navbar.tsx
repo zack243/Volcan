@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
 
 const navLinks = [
@@ -47,10 +48,15 @@ export default function Navbar() {
         <div className="w-full section-padding">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2 group">
-              <div className="relative">
-                <Zap className="w-8 h-8 text-volcan-red group-hover:text-volcan-electric transition-colors duration-300" />
-                <div className="absolute inset-0 bg-volcan-red/30 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <a href="#home" className="flex items-center gap-3 group">
+              <div className="relative w-10 h-10">
+                <Image
+                  src="/images/Volcan.png"
+                  alt="VOLCAN"
+                  fill
+                  className="object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
+                  priority
+                />
               </div>
               <span className="font-bebas text-2xl tracking-widest text-white">
                 VOLCAN
