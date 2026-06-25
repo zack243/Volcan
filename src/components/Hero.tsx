@@ -22,7 +22,7 @@ export default function Hero() {
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-volcan-red/10 via-volcan-black to-volcan-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-volcan-red/5 via-volcan-black to-[#0a0a0a]" />
         
         {/* Animated Glow */}
         <motion.div
@@ -35,11 +35,14 @@ export default function Hero() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-volcan-red/20 rounded-full blur-[150px]"
+          className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-volcan-red/10 rounded-full blur-[150px]"
         />
         
         {/* Electric Accent */}
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-volcan-electric/5 to-transparent" />
+        
+        {/* Light Radial Overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
         
         {/* Grid Pattern */}
         <div 
@@ -162,7 +165,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-volcan-black to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
     </section>
   )
 }

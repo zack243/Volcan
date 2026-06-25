@@ -49,25 +49,25 @@ export default function Navbar() {
         <div className="w-full section-padding">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" className="flex items-center group">
-              <div className="relative w-12 h-12">
+            <a href="#home" className="flex items-center group flex-shrink-0">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
                 <Image
                   src="/images/Volcan.png"
                   alt="VOLCAN"
                   fill
-                  className="object-contain drop-shadow-sm group-hover:scale-110 transition-transform duration-300"
+                  className="object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300"
                   priority
                 />
               </div>
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="font-montserrat text-sm font-medium text-volcan-black hover:text-volcan-red transition-colors duration-300 relative group"
+                  className="font-montserrat text-sm xl:text-base font-medium text-volcan-black hover:text-volcan-red transition-colors duration-300 relative group"
                 >
                   {t(link.key) as string}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-volcan-red group-hover:w-full transition-all duration-300" />
@@ -76,7 +76,7 @@ export default function Navbar() {
             </div>
 
             {/* Right side buttons */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
               {/* Language Switcher */}
               <button
                 onClick={toggleLanguage}

@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply bg-volcan-black text-volcan-white antialiased;
+    @apply bg-white text-volcan-black antialiased;
   }
   
   ::selection {
@@ -55,7 +55,7 @@
   }
   
   .text-body {
-    @apply text-sm sm:text-base font-poppins text-gray-300 leading-relaxed;
+    @apply text-sm sm:text-base font-poppins text-gray-600 leading-relaxed;
   }
   
   .btn-primary {
@@ -95,7 +95,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #f3f4f6;
 }
 
 ::-webkit-scrollbar-thumb {

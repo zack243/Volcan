@@ -45,10 +45,10 @@ export default function Benefits() {
   const { t } = useLanguage()
 
   return (
-    <section id="benefits" className="relative py-24 bg-volcan-blackLight overflow-hidden">
+    <section id="benefits" className="relative py-24 bg-gray-50 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-volcan-red/10 rounded-full blur-[150px]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-volcan-red/5 rounded-full blur-[150px]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-volcan-electric/5 rounded-full blur-[150px]" />
       </div>
 
@@ -61,7 +61,7 @@ export default function Benefits() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-lg text-white mb-4">
+          <h2 className="heading-lg text-volcan-black mb-4">
             {t('benefits.title') as string}
           </h2>
           <div className="w-24 h-1 bg-volcan-red mx-auto" />
@@ -81,23 +81,23 @@ export default function Benefits() {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="relative h-full p-8 bg-gradient-to-b from-volcan-black to-volcan-blackLight border border-volcan-red/20 rounded-none overflow-hidden transition-all duration-500 hover:border-volcan-red/50">
+              <div className="relative h-full p-8 bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-500 hover:border-volcan-red/50 hover:shadow-[0_10px_40px_rgba(214,17,17,0.12)]">
                 {/* Animated Border */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-r from-volcan-red/0 via-volcan-red/20 to-volcan-red/0" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-volcan-red/0 via-volcan-red/10 to-volcan-red/0" />
                 </div>
 
                 {/* Icon */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 flex items-center justify-center bg-volcan-red/10 border border-volcan-red/30 rounded-none transition-all duration-500 group-hover:bg-volcan-red/20 group-hover:border-volcan-red/50">
+                  <div className="w-16 h-16 flex items-center justify-center bg-volcan-red/10 border border-volcan-red/20 rounded-lg transition-all duration-500 group-hover:bg-volcan-red/20 group-hover:border-volcan-red/40">
                     <benefit.icon className="w-8 h-8 text-volcan-red" />
                   </div>
                   {/* Glow Effect */}
-                  <div className="absolute inset-0 w-16 h-16 bg-volcan-red/30 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 w-16 h-16 bg-volcan-red/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Content */}
-                <h3 className="font-bebas text-3xl tracking-wider text-white mb-4">
+                <h3 className="font-bebas text-3xl tracking-wider text-volcan-black mb-4">
                   {t(`benefits.${benefit.id}.title`) as string}
                 </h3>
                 <p className="text-body">
@@ -105,7 +105,7 @@ export default function Benefits() {
                 </p>
 
                 {/* Number Indicator */}
-                <div className="absolute top-8 right-8 font-bebas text-6xl text-volcan-red/10 group-hover:text-volcan-red/20 transition-colors duration-500">
+                <div className="absolute top-8 right-8 font-bebas text-6xl text-volcan-red/5 group-hover:text-volcan-red/10 transition-colors duration-500">
                   0{index + 1}
                 </div>
               </div>

@@ -15,7 +15,7 @@ export default function About() {
   const { t } = useLanguage()
 
   return (
-    <section id="about" className="relative py-24 bg-volcan-blackLight overflow-hidden">
+    <section id="about" className="relative py-24 bg-white overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-volcan-red/5 rounded-full blur-[200px]" />
       </div>
@@ -29,8 +29,8 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <div className="absolute -inset-4 bg-volcan-red/20 blur-2xl rounded-lg" />
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl shadow-black/10">
+              <div className="absolute -inset-4 bg-volcan-red/10 blur-2xl rounded-lg" />
               <div className="relative h-full">
                 <Image
                   src="/images/family.png"
@@ -49,7 +49,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="heading-lg text-white mb-6">{t('about.title') as string}</h2>
+            <h2 className="heading-lg text-volcan-black mb-6">{t('about.title') as string}</h2>
             <p className="text-body text-lg mb-10 max-w-lg">{t('about.desc') as string}</p>
 
             <div className="grid grid-cols-3 gap-4">
@@ -60,10 +60,10 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center p-4 bg-volcan-black/50 border border-volcan-red/20 rounded-lg"
+                  className="text-center p-4 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-volcan-red/30 transition-all duration-300"
                 >
                   <stat.icon className="w-8 h-8 text-volcan-red mx-auto mb-3" />
-                  <p className="font-montserrat font-semibold text-sm text-gray-300">{t(stat.key) as string}</p>
+                  <p className="font-montserrat font-semibold text-sm text-gray-700">{t(stat.key) as string}</p>
                 </motion.div>
               ))}
             </div>

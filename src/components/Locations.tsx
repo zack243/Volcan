@@ -15,8 +15,8 @@ export default function Locations() {
   const { t } = useLanguage()
 
   return (
-    <section id="locations" className="relative py-24 bg-volcan-black overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
+    <section id="locations" className="relative py-24 bg-gray-50 overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.05]">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
             <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -39,7 +39,7 @@ export default function Locations() {
               <MapPin className="w-10 h-10 text-volcan-red" />
             </div>
             
-            <h2 className="heading-lg text-white mb-6">{t('locations.title') as string}</h2>
+            <h2 className="heading-lg text-volcan-black mb-6">{t('locations.title') as string}</h2>
             <p className="text-body text-lg mb-12 max-w-2xl mx-auto">{t('locations.desc') as string}</p>
           </motion.div>
 
@@ -57,10 +57,10 @@ export default function Locations() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                className="p-6 bg-volcan-blackLight border border-volcan-red/20 rounded-lg hover:border-volcan-red/50 transition-colors duration-300"
+                className="p-6 bg-white border border-gray-200 rounded-lg hover:border-volcan-red/50 hover:shadow-[0_10px_30px_rgba(214,17,17,0.12)] transition-all duration-300"
               >
                 <type.icon className="w-8 h-8 text-volcan-red mx-auto mb-3" />
-                <p className="font-montserrat text-sm text-gray-300">{type.label}</p>
+                <p className="font-montserrat text-sm text-gray-700">{type.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -71,7 +71,7 @@ export default function Locations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="btn-primary inline-flex items-center gap-2"
+            className="btn-primary inline-flex items-center gap-2 shadow-lg shadow-volcan-red/20"
           >
             {t('locations.cta') as string}
           </motion.a>

@@ -53,9 +53,9 @@ export default function Products() {
   const { t } = useLanguage()
 
   return (
-    <section id="products" className="relative py-24 bg-volcan-black">
+    <section id="products" className="relative py-24 bg-white">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.03]">
         <div 
           className="absolute inset-0"
           style={{
@@ -74,7 +74,7 @@ export default function Products() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-lg text-white mb-4">
+          <h2 className="heading-lg text-volcan-black mb-4">
             {t('products.title') as string}
           </h2>
           <div className="w-24 h-1 bg-volcan-red mx-auto" />
@@ -94,9 +94,9 @@ export default function Products() {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="relative bg-gradient-to-b from-volcan-blackLight to-volcan-black border border-volcan-red/20 rounded-lg overflow-hidden transition-all duration-500 hover:border-volcan-red/60 hover:shadow-[0_0_30px_rgba(214,17,17,0.3)]">
+              <div className="relative bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-500 hover:border-volcan-red/60 hover:shadow-[0_10px_40px_rgba(214,17,17,0.15)]">
                 {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-volcan-red/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-volcan-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Product Image */}
                 <div className="relative h-48 sm:h-56 flex items-center justify-center p-6">
@@ -115,8 +115,8 @@ export default function Products() {
                 </div>
 
                 {/* Product Info */}
-                <div className="relative p-6 border-t border-volcan-red/10">
-                  <h3 className="font-bebas text-2xl tracking-wider text-white mb-2">
+                <div className="relative p-6 border-t border-gray-100">
+                  <h3 className="font-bebas text-2xl tracking-wider text-volcan-black mb-2">
                     {t(`products.${product.id}.title`) as string}
                   </h3>
                   <p className="text-body text-sm mb-4">
@@ -126,7 +126,7 @@ export default function Products() {
                     <span className="text-xs font-montserrat text-volcan-red uppercase tracking-wider">
                       {t('products.ideal') as string || 'Idéal pour'}
                     </span>
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-gray-500">
                       {t(`products.${product.id}.uses`) as string}
                     </span>
                   </div>
@@ -137,7 +137,7 @@ export default function Products() {
                   {product.sizes.map((size) => (
                     <span
                       key={size}
-                      className="px-2 py-1 bg-volcan-red/20 text-volcan-red text-xs font-montserrat font-bold rounded"
+                      className="px-2 py-1 bg-volcan-red/10 text-volcan-red text-xs font-montserrat font-bold rounded"
                     >
                       {size}
                     </span>

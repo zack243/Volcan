@@ -39,7 +39,7 @@ export default function Uses() {
   const { t } = useLanguage()
 
   return (
-    <section id="uses" className="relative py-24 bg-volcan-black">
+    <section id="uses" className="relative py-24 bg-white">
       <div className="relative z-10 w-full section-padding">
         {/* Section Header */}
         <motion.div
@@ -49,7 +49,7 @@ export default function Uses() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-lg text-white mb-4">
+          <h2 className="heading-lg text-volcan-black mb-4">
             {t('uses.title') as string}
           </h2>
           <div className="w-24 h-1 bg-volcan-red mx-auto" />
@@ -69,7 +69,7 @@ export default function Uses() {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="relative aspect-square bg-volcan-blackLight border border-volcan-red/20 rounded-lg overflow-hidden transition-all duration-500 hover:border-volcan-red/60">
+              <div className="relative aspect-square bg-gray-100 border border-gray-200 rounded-lg overflow-hidden transition-all duration-500 hover:border-volcan-red/60 hover:shadow-[0_10px_40px_rgba(214,17,17,0.15)]">
                 {/* Image */}
                 <div className="absolute inset-0">
                   <Image
@@ -81,10 +81,10 @@ export default function Uses() {
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-volcan-black via-volcan-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-volcan-black via-volcan-black/50 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
                 
                 {/* Red Tint on Hover */}
-                <div className="absolute inset-0 bg-volcan-red/0 group-hover:bg-volcan-red/20 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-volcan-red/0 group-hover:bg-volcan-red/15 transition-colors duration-500" />
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-end p-4">
