@@ -29,13 +29,12 @@ export default function Hero() {
           priority
           quality={90}
         />
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+        {/* Very light overlay for readability only if needed */}
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full section-padding pt-36 pb-24">
+      <div className="relative z-10 w-full section-padding pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Empty left column on desktop to let the background image breathe */}
           <div className="hidden lg:block" />
@@ -45,30 +44,27 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            className="flex flex-col items-center text-center"
           >
             {/* Product Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="relative mb-10"
+              className="relative mb-10 w-full max-w-sm"
             >
-              <div className="relative p-4 sm:p-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
-                {/* Inner glow */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-volcan-red/10 pointer-events-none" />
-                
+              <div className="relative p-6 sm:p-8 bg-[#050505] rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden">
                 <motion.div
                   animate={{ y: [0, -12, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="relative z-10"
+                  className="relative z-10 flex items-center justify-center"
                 >
-                  <div className="relative w-48 h-64 sm:w-56 sm:h-72 lg:w-64 lg:h-80">
+                  <div className="relative w-40 h-56 sm:w-48 sm:h-64 lg:w-56 lg:h-72">
                     <Image
                       src="/images/pile-volcan.png"
                       alt="VOLCAN Battery"
                       fill
-                      className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
+                      className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
                       priority
                     />
                   </div>
@@ -85,49 +81,51 @@ export default function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Main Title */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="heading-xl text-white mb-5"
-            >
-              <span className="block">{t('hero.title') as string}</span>
-            </motion.h1>
+            {/* Text Content - aligned with card width */}
+            <div className="w-full max-w-sm">
+              {/* Main Title */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="heading-xl text-white mb-5"
+              >
+                <span className="block">{t('hero.title') as string}</span>
+              </motion.h1>
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="text-lg sm:text-xl font-poppins text-white/90 max-w-lg mb-8"
-            >
-              {t('hero.subtitle') as string}
-            </motion.p>
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.45 }}
+                className="text-lg sm:text-xl font-poppins text-white/90 mb-8"
+              >
+                {t('hero.subtitle') as string}
+              </motion.p>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10"
-            >
-              <a href="#products" className="btn-primary flex items-center justify-center gap-2 group shadow-lg shadow-black/30">
-                {t('hero.ctaProducts') as string}
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a href="#contact" className="btn-secondary flex items-center justify-center bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-volcan-black">
-                {t('hero.ctaContact') as string}
-              </a>
-            </motion.div>
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+              >
+                <a href="#products" className="btn-primary flex items-center justify-center gap-2 group shadow-lg shadow-black/30">
+                  {t('hero.ctaProducts') as string}
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a href="#contact" className="btn-secondary flex items-center justify-center bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-volcan-black">
+                  {t('hero.ctaContact') as string}
+                </a>
+              </motion.div>
 
-            {/* Badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.75 }}
-              className="flex flex-wrap gap-3 justify-center lg:justify-start"
-            >
+              {/* Badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.75 }}
+                className="flex flex-wrap gap-3 justify-center"
+              >
               {badges.map((badge, index) => (
                 <motion.div
                   key={badge.key}
@@ -141,12 +139,10 @@ export default function Hero() {
                 </motion.div>
               ))}
             </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent" />
     </section>
   )
 }

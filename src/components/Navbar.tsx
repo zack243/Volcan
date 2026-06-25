@@ -42,15 +42,15 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white shadow-lg shadow-black/10 py-3'
-            : 'bg-white shadow-md shadow-black/5 py-4'
+            ? 'bg-white shadow-lg shadow-black/10 py-2'
+            : 'bg-white shadow-md shadow-black/5 py-2.5'
         }`}
       >
         <div className="w-full section-padding">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="#home" className="flex items-center group flex-shrink-0">
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16">
                 <Image
                   src="/images/Volcan.png"
                   alt="VOLCAN"
