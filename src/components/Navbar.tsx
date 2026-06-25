@@ -22,10 +22,11 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 10)
     }
 
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -41,8 +42,8 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'glass-effect border-b border-volcan-red/20 py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-white shadow-lg shadow-black/10 py-3'
+            : 'bg-white shadow-md shadow-black/5 py-4'
         }`}
       >
         <div className="w-full section-padding">
@@ -54,7 +55,7 @@ export default function Navbar() {
                   src="/images/Volcan.png"
                   alt="VOLCAN"
                   fill
-                  className="object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
+                  className="object-contain drop-shadow-sm group-hover:scale-110 transition-transform duration-300"
                   priority
                 />
               </div>
@@ -66,7 +67,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="font-montserrat text-sm font-medium text-gray-300 hover:text-volcan-red transition-colors duration-300 relative group"
+                  className="font-montserrat text-sm font-medium text-volcan-black hover:text-volcan-red transition-colors duration-300 relative group"
                 >
                   {t(link.key) as string}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-volcan-red group-hover:w-full transition-all duration-300" />
@@ -79,17 +80,18 @@ export default function Navbar() {
               {/* Language Switcher */}
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-1 font-montserrat text-sm font-semibold text-white hover:text-volcan-red transition-colors duration-300"
+                className="flex items-center gap-1 font-montserrat text-sm font-semibold text-volcan-black hover:text-volcan-red transition-colors duration-300"
+                aria-label="Toggle language"
               >
                 <span className={language === 'fr' ? 'text-volcan-red' : ''}>FR</span>
-                <span className="text-gray-500">/</span>
+                <span className="text-gray-400">/</span>
                 <span className={language === 'en' ? 'text-volcan-red' : ''}>EN</span>
               </button>
 
               {/* CTA Button */}
               <a
                 href="#contact"
-                className="btn-primary text-sm"
+                className="bg-volcan-red text-white font-montserrat text-sm font-semibold px-5 py-2.5 hover:bg-volcan-red/90 transition-colors duration-300 shadow-md shadow-volcan-red/20"
               >
                 {t('nav.contactBtn') as string}
               </a>
@@ -98,7 +100,8 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-white hover:text-volcan-red transition-colors duration-300"
+              className="lg:hidden p-2 text-volcan-black hover:text-volcan-red transition-colors duration-300"
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -116,7 +119,7 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="fixed inset-0 z-40 lg:hidden"
           >
-            <div className="absolute inset-0 bg-volcan-black/95 backdrop-blur-xl" />
+            <div className="absolute inset-0 bg-white/98 backdrop-blur-xl" />
             <div className="relative h-full flex flex-col items-center justify-center gap-8 p-8">
               {navLinks.map((link, index) => (
                 <motion.a
@@ -126,7 +129,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-bebas text-3xl tracking-wider text-white hover:text-volcan-red transition-colors duration-300"
+                  className="font-bebas text-3xl tracking-wider text-volcan-black hover:text-volcan-red transition-colors duration-300"
                 >
                   {t(link.key) as string}
                 </motion.a>
@@ -144,10 +147,10 @@ export default function Navbar() {
                     toggleLanguage()
                     setIsMobileMenuOpen(false)
                   }}
-                  className="flex items-center gap-2 font-montserrat text-lg font-semibold"
+                  className="flex items-center gap-2 font-montserrat text-lg font-semibold text-volcan-black"
                 >
                   <span className={language === 'fr' ? 'text-volcan-red' : 'text-gray-400'}>FR</span>
-                  <span className="text-gray-500">/</span>
+                  <span className="text-gray-400">/</span>
                   <span className={language === 'en' ? 'text-volcan-red' : 'text-gray-400'}>EN</span>
                 </button>
               </motion.div>
@@ -158,7 +161,7 @@ export default function Navbar() {
                 transition={{ delay: (navLinks.length + 1) * 0.1 }}
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary mt-4"
+                className="bg-volcan-red text-white font-montserrat text-base font-semibold px-8 py-3 mt-4 hover:bg-volcan-red/90 transition-colors duration-300"
               >
                 {t('nav.contactBtn') as string}
               </motion.a>
